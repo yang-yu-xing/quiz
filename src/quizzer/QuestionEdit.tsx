@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { Button, Form } from "react-bootstrap";
 import { Question, QuestionType } from "../interfaces/question";
 
 import "./QuestionEdit.css";
 
+interface useQuestions {
+    index: number,
+    lastIndex: number,
+    question: Question,
+    editQuestion: (id: number, question: Question) => void,
+    removeQuestion: (id: number) => void,
+    swapQuestion: (idx1: number, idx2: number) => void
+}
 export const QuestionEdit = ({
     index,
     lastIndex,
@@ -10,7 +19,7 @@ export const QuestionEdit = ({
     editQuestion,
     removeQuestion,
     swapQuestion
-}: {}) => {
+}: useQuestions) => {
     const [a, b] = useState<number>(
         question.options.findIndex((s: string) => question.expected === s)
     );

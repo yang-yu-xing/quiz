@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 
+interface useQuiz {
+    show: boolean,
+    handleClose: () => void,
+    addQuiz: (title: string, body: string) => void
+}
+
 export const AddQuizModal = ({
     show,
     handleClose,
     addQuiz
-}: {
-}) => {
+}: useQuiz) => {
     const [title, setTitle] = useState<string>("Example Quiz");
 
     const saveChanges = () => {

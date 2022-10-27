@@ -5,6 +5,16 @@ import { Form, Button } from "react-bootstrap";
 import "./QuizQuestion.css";
 type ChangeEvent = React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>;
 
+interface useQuestion {
+    index: number,
+    question: Question,
+    submitted: boolean,
+    handleSubmit: (index: number) => void,
+    addPoints: (value: number) => void,
+    editQuestionSub: (id: number, value: ChangeEvent) => void
+
+}
+
 export const QuizQuestion = ({
     index,
     question,
@@ -12,7 +22,7 @@ export const QuizQuestion = ({
     handleSubmit,
     addPoints,
     editQuestionSub
-}: {}) => {
+}: useQuestion) => {
     const handleClick = (e: ChangeEvent) => {
         if (!submitted) {
             editQuestionSub(question.id, e.target.value);

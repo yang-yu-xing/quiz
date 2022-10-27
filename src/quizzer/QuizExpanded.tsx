@@ -6,12 +6,19 @@ import { Quiz } from "../interfaces/quiz";
 import "./QuizExpanded.css";
 import { QuizQuestion } from "./QuizQuestion";
 
+interface useExpand {
+    quiz: Quiz,
+    editQuiz: (id: number, quiz: Quiz) => void,
+    resetView: () => void,
+    switchEdit: () => void
+}
+
 export const QuizExpanded = ({
     quiz,
     editQuiz,
     resetView,
     switchEdit
-}: {}) => {
+}: useExpand) => {
     const filteredQuestions = quiz.questionList.filter(
         (q: Question): boolean =>
             (quiz.published && q.published) || !quiz.published

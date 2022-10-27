@@ -6,13 +6,21 @@ import { QuestionEdit } from "./QuestionEdit";
 
 import "./QuizEdit.css";
 
+interface useEdit {
+    quiz: Quiz,
+    editQuiz: (id: number, quiz: Quiz) => void,
+    deleteQuiz: (id: number) => void,
+    switchEdit: () => void,
+    resetView: () => void
+}
+
 export const QuizEdit = ({
     quiz,
     editQuiz,
     deleteQuiz,
     switchEdit,
     resetView
-}: {) => {
+}: useEdit) => {
     const [newQuiz, setNewQuiz] = useState<Quiz>({ ...quiz });
 
     const editQuestion = (questionId: number, newQuestion: Question) => {
@@ -26,8 +34,7 @@ export const QuizEdit = ({
     const removeQuestion = (questionId: number) => {
         setNewQuiz({
             ...newQuiz,
-            questionList: newQuiz.questionList.filter(
-            )
+            questionList: newQuiz.questionList.filter()
         });
     };
 
