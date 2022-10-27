@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Question, QuestionType } from "../interfaces/question";
+import { Question } from "../interfaces/question";
 
 import "./QuestionEdit.css";
 
@@ -120,7 +120,7 @@ export const QuestionEdit = ({
                                 <Form.Select
                                     className="type_dropdown"
                                     value={question.type}
-                                    onChange={handleSwitch}
+                                    onChange={() => switchMulti}
                                 >
                                     <option
                                         data-testid={

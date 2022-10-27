@@ -34,7 +34,7 @@ export const QuizView = ({
                     switchEdit={switchEdit}
                     resetView={resetView}
                 ></QuizEdit>
-            )
+            )}
             {!edit && (
                 <QuizExpanded
                     quiz={quiz}
@@ -42,7 +42,7 @@ export const QuizView = ({
                     resetView={resetView}
                     switchEdit={switchEdit}
                 ></QuizExpanded>
-            )
+            )}
         </div>
     );
 }

@@ -11,7 +11,7 @@ interface useQuestion {
     submitted: boolean,
     handleSubmit: (index: number) => void,
     addPoints: (value: number) => void,
-    editQuestionSub: (id: number, value: ChangeEvent) => void
+    editQuestionSub: (id: number, event: string) => void
 
 }
 
@@ -63,7 +63,7 @@ export const QuizQuestion = ({
                             {question.options.map(
                                 (option: string, i: number) => (
                                     <Form.Check
-                                        type=""
+                                        type="radio"
                                         name={"questionChoice" + index}
                                         key={option + " | " + i}
                                         label={option}
