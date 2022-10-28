@@ -45,7 +45,7 @@ export const QuizList = ({
                 </>
             )}
             {quizzes.map((quiz: Quiz) => {
-                if (displayId === quiz.id) {
+                if (displayId === quiz.id) 
                     return (
                         <QuizView
                             key={quiz.id}
@@ -55,8 +55,7 @@ export const QuizList = ({
                             resetView={resetQuizView}
                         ></QuizView>
                     );
-                }
-            })}
+                    return null})}
         </div>
     );
 };
